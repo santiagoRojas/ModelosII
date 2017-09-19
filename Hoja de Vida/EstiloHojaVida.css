@@ -1,0 +1,33 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+
+table {     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;    margin: 45px;     width: 480px; text-align: left;    border-collapse: collapse; }
+
+th {     font-size: 13px;     font-weight: normal;     padding: 8px;     background: #b9c9fe;
+    border-top: 4px solid #aabcfe;    border-bottom: 1px solid #fff; color: #039; }
+
+td {    padding: 8px;     background: #e8edff;     border-bottom: 1px solid #fff;
+    color: #669;    border-top: 1px solid transparent; }
+
+tr:hover td { background: #d0dafd; color: #339; }
+
+body {
+    background: #444;
+  }
+  h1 {
+    font-size: 38px;
+    font-style: italic;
+    color: #333;
+    padding: 10px;
+    text-shadow: -1px -1px 0px #101010, 1px 1px 0px #505050;
+  }
+  .opcion_iluminada {
+    font-size: 15px;
+    color:#999;
+    text-decoration:none;
+    padding: 5px;
+  }
+  .opcion_iluminada:hover {
+    color:#fff;
+    text-shadow: 0px 0px 15px #fff;
+  }
