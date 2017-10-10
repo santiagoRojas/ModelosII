@@ -1,0 +1,42 @@
+CREATE TABLE jugador(id serial PRIMARY KEY, mkname varchar (30) NOT NULL, password varchar (30) NOT NULL, nombre varchar (30) NOT NULL, apellido varchar (30) NOT NULL, email varchar (30) NOT NULL, fecha_nacimiento date,pais integer NOT NULL, avatar varchar (30) NOT NULL  );
+
+
+CREATE TABLE pais(id serial PRIMARY KEY, nombre varchar (30) NOT NULL, descripcion_pais varchar (30));
+
+
+santiago=# alter table jugador
+add constraint fk_jugador_pais
+foreign key (pais)
+references pais(id);
+
+CREATE TABLE juego(id serial PRIMARY KEY, nombre varchar (30) NOT NULL, pegi varchar (30) NOT NULL, descripcion varchar (50) NOT NULL, portada varchar (30) NOT NULL,numero_jugadores integer NOT NULL  );
+
+CREATE TABLE puntaje(id serial PRIMARY KEY, juego integer NOT NULL, jugador integer NOT NULL, fecha date NOT NULL, puntaje varchar (30) NOT NULL );
+
+alter table puntaje
+add constraint fk_puntaje_juego
+foreign key (juego)
+references juego(id);
+
+alter table puntaje                                                  
+add constraint fk_puntaje_jugador
+foreign key (jugador)                                                       
+references jugador(id);
+
+CREATE TABLE categorias(id serial PRIMARY KEY, nombre varchar (30) NOT NULL, descripcion varchar (30) NOT NULL );
+
+CREATE TABLE juego_categoria(id serial PRIMARY KEY, juego integer NOT NULL, categoria integer NOT NULL);
+
+alter table juego_categoriaadd constraint fk_juego_categoria_categoria
+foreign key (categoria)
+references categorias(id);
+
+alter table juego_categoria
+santiago-# add constraint fk_juego_categoria_juego
+santiago-# foreign key (juego)
+santiago-# references juego(id);
+
+
+
+
+
